@@ -42,19 +42,18 @@ app.get("/movies", async (req, res) => {
 
 app.get("/search", async (req, res) => {
   const { title } = req.query;
-  console.log("===");
-  console.log(title);
+  // if statement for here input validation
+  const query = `
+                SELECT *
+                FROM movies
+                WHERE title ILIKE $1
+              `;
   try {
-    const query = `
-                  SELECT *
-                  FROM movies
-                  WHERE title ILIKE '${title}';
-                `;
-
-    const result = await db.any(query);
+    const result = await db.any(query, [title]); // paramaterize
     res.json(result);
   } catch (err) {
-    res.status(500).send(err.message);
+    console.error(err.message); // logging errors for internal debugging
+    res.status(500).send("An Error has occurred"); // dont want to expose sensitive error messages to users change (err.message)
   }
 });
 
