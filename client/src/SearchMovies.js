@@ -7,14 +7,19 @@ const SearchMovies = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
+    if (!/^[A-Za-z0-9]+$/.test(title)) {
+      alert("Please enter a valid movie title");
+      return;
+    }
     try {
       const response = await axios.get(
         `http://localhost:3001/search?title=${title}`
       );
       console.log(response);
+
       setResults(response.data);
     } catch (error) {
-      console.error("Error fetching data:", error);
+      console.error("Error in frontend fetching data:", error);
     }
   };
 
