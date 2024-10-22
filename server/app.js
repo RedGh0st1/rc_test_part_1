@@ -2,9 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const pgp = require("pg-promise")();
 const logger = require("morgan");
-
+import helmet from "helmet";
 const app = express();
 
+app.use(helmet());
 app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());
