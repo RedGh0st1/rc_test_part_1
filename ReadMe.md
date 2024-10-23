@@ -50,39 +50,46 @@ Visit http://localhost:3001/users to view all users.\
 Visit http://localhost:3001/movies to view all movies.
 
 ## React Application
+# Project Title: SQL Injection Prevention
+## Overview
 
-The React app (accessible at http://localhost:3000), you'll see a simple interface with seven movie titles. You can search for these movies by typing their titles into the input box. For example, typing "The Matrix" will display "The Matrix" and its release date.
+This project involves two applications: a frontend application built with React JS and a backend application built with Node JS. The frontend application queries a list of movies, but currently lacks adequate protection, allowing a malicious user to manipulate the query and access sensitive user information. The goal is to secure the application on both the frontend and backend.
 
-## SQL Injection Demonstration
+## Objectives
 
-A sample SQL injection code is provided for demonstration:
+1. Understand the application.
+    
+2. Secure the frontend and backend.
+    
 
-```
-' OR 1=1; SELECT * FROM users --
-```
+## Key Points
 
-Paste this code into the input box to see all users from the database. This exposes a significant security vulnerability.
+- **Issue**: The app allows SQL injection via the search input.
+    
+- **Impact**: Potential data breaches and loss of sensitive information.
+    
+- **Affected**: The application and its users.
+    
+- **Research**: Explored SQL injection methods and solutions.
+    
+- **Validation**: Tested and fixed vulnerabilities using parameterized queries and input validation.
+    
+- **Future Prevention**:
+    
+    - Use parameterized queries.
+        
+    - Validate inputs on both frontend and backend.
+        
+    - Employ stored procedures.
+        
+    - Use a Web Application Firewall (WAF).
+        
+    - Conduct regular security audits.
+        
+    - Use security tools like Snyk and Splunk.
+        
 
-## Task
+## Real-World Example
 
-Your objectives are:
-
-Identify and Fix Vulnerabilities:
-
-Backend: Address the SQL injection vulnerabilities in the server code.
-Frontend: Implement measures to prevent the injection of malicious input.
-Research and Presentation:
-
-What is SQL Injection?
-Who is Affected?
-What Changes Were Made on the Backend?
-What Changes Were Made on the Client Side?
-Red Canary requires you to document your research and analytical process to evaluate your problem-solving skills.
-
-Please share the GitHub repository link and a PowerPoint presentation with your findings.
-
-You are expected to demonstrate your code and present your findings on SQL injection, including how you resolved the issues.
-
-Please refer to the Detection Engineer documentation for more information.
-
-If you have any questions, please slack me or email me at pak@pursuit.org
+- **Sony PlayStation Network (2011)**: Hackers stole personal information of 77 million accounts through SQL injection.
+    
