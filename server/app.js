@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const pgp = require("pg-promise")();
 const logger = require("morgan");
-import helmet from "helmet";
+const helmet = require("helmet");
 const app = express();
 require("dotenv").config();
 
