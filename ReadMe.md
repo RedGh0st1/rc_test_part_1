@@ -1,4 +1,4 @@
-## React Application
+
 # Project Title: SQL Injection Prevention
 ## Overview
 
