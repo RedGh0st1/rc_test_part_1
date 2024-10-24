@@ -32,8 +32,7 @@ app.get("/users", async (req, res) => {
 
 app.get("/movies", async (req, res) => {
   try {
-    const query = "SELECT * FROM movies";
-    const result = await db.any(query);
+    const result = await db.any("SELECT * FROM movies");
     res.json(result);
   } catch (err) {
     console.error(err.message);
@@ -50,7 +49,7 @@ app.get("/search", async (req, res) => {
                 WHERE title ILIKE $1
               `;
   try {
-    const result = await db.any(query, [`%$title%`]); // paramaterize
+    const result = await db.any(query, [title]); // paramaterize
     res.json(result);
   } catch (err) {
     console.error(err.message); // logging errors for internal debugging
