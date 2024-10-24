@@ -1,3 +1,8 @@
+## React Application
+# Project Title: SQL Injection Prevention
+## Overview
+
+This project involves two applications: a frontend application built with React JS and a backend application built with Node JS. The frontend application queries a list of movies, but currently lacks adequate protection, allowing a malicious user to manipulate the query and access sensitive user information. The goal is to secure the application on both the frontend and backend.
 ## Folder Structure
 
 ```
@@ -49,11 +54,6 @@ Visit http://localhost:3000 to see the React app.\
 Visit http://localhost:3001/users to view all users.\
 Visit http://localhost:3001/movies to view all movies.
 
-## React Application
-# Project Title: SQL Injection Prevention
-## Overview
-
-This project involves two applications: a frontend application built with React JS and a backend application built with Node JS. The frontend application queries a list of movies, but currently lacks adequate protection, allowing a malicious user to manipulate the query and access sensitive user information. The goal is to secure the application on both the frontend and backend.
 
 ## Objectives
 
@@ -76,13 +76,7 @@ This project involves two applications: a frontend application built wi
     
 - **Future Prevention**:
     
-    - Use parameterized queries.
         
-    - Validate inputs on both frontend and backend.
-        
-    - Employ stored procedures.
-        
-    - Use a Web Application Firewall (WAF).
         
     - Conduct regular security audits.
         
