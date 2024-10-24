@@ -7,7 +7,8 @@ const SearchMovies = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
-    if (!/^[A-Za-z0-9]+$/.test(title)) {
+
+    if (!/^[A-Za-z0-9\s']+$/.test(title)) {
       alert("Please enter a valid movie title");
       return;
     }
