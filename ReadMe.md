@@ -126,7 +126,7 @@ const result = await db.any(query, [title]);
 
 **Frontend**: Implemented input validation to ensure only valid data is sent to the backend.
 ```javascript
-if (!/^[A-Za-z0-9]+$/.test(title)) {
+if (!/^[A-Za-z0-9\s']+$/.test(title)) {
   alert("Please enter a valid movie title");
   return;
 }
