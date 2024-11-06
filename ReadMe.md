@@ -22,11 +22,6 @@ root
 └── package.json (root)
 ```
 
-Once running, both the client and server will be available:
-
-Visit http://localhost:3000 to see the React app.\
-Visit http://localhost:3001/users to view all users.\
-Visit http://localhost:3001/movies to view all movies.
 
 ## Installation Instructions
 
@@ -131,7 +126,7 @@ const result = await db.any(query, [title]);
 
 **Frontend**: Implemented input validation to ensure only valid data is sent to the backend.
 ```javascript
-if (!/^[A-Za-z0-9]+$/.test(title)) {
+if (!/^[A-Za-z0-9\s']+$/.test(title)) {
   alert("Please enter a valid movie title");
   return;
 }
