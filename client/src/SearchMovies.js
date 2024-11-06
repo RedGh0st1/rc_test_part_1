@@ -14,10 +14,13 @@ const SearchMovies = () => {
     }
     try {
       const response = await axios.get(
-        `http://localhost:3001/search?title=${title}`
+        `http://localhost:3002/search?title=${title}`
       );
       console.log(response);
-
+      if (response.data.length === 0) {
+        alert("No results found");
+        return;
+      }
       setResults(response.data);
     } catch (error) {
       console.error("Error in frontend fetching data:", error);
