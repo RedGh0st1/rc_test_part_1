@@ -42,18 +42,18 @@ app.get("/movies", async (req, res) => {
 
 app.get("/search", async (req, res) => {
   const { title } = req.query;
-  // if statement for here input validation
+
   const query = `
                 SELECT *
                 FROM movies
                 WHERE title ILIKE $1
               `;
   try {
-    const result = await db.any(query, [title]); // paramaterize
+    const result = await db.any(query, [title]);
     res.json(result);
   } catch (err) {
-    console.error(err.message); // logging errors for internal debugging
-    res.status(500).send("An Error has occurred"); // dont want to expose sensitive error messages to users change (err.message)
+    console.error(err.message);
+    res.status(500).send("An Error has occurred");
   }
 });
 
